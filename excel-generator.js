@@ -4,61 +4,43 @@ const fileName = 'Excel.xlsx';
 const workbook = new excel.Workbook();
 const worksheet = workbook.addWorksheet('Planilha 1');
 
+const borderProps = {
+  border: {
+    top: {
+      style: 'thin',
+      color: '#E05508',
+    },
+    right: {
+      style: 'thin',
+      color: '#E05508',
+    },
+    bottom: {
+      style: 'thin',
+      color: '#E05508',
+    },
+    left: {
+      style: 'thin',
+      color: '#E05508',
+    },
+    diagonal: {
+      style: 'thin',
+      color: '#E05508',
+    }
+  },
+}
+
 const evenStyle = workbook.createStyle({
   fill: {
     type: 'pattern',
     patternType: 'lightUp',
     fgColor: '#E05508',
   },
-  border: {
-    top: {
-      style: 'thin',
-      color: '#E05508',
-    },
-    right: {
-      style: 'thin',
-      color: '#E05508',
-    },
-    bottom: {
-      style: 'thin',
-      color: '#E05508',
-    },
-    left: {
-      style: 'thin',
-      color: '#E05508',
-    },
-    diagonal: {
-      style: 'thin',
-      color: '#E05508',
-    }
-  },
+  ...borderProps,
 });
 
 const oddStyle = workbook.createStyle({
-  border: {
-    top: {
-      style: 'thin',
-      color: '#E05508',
-    },
-    right: {
-      style: 'thin',
-      color: '#E05508',
-    },
-    bottom: {
-      style: 'thin',
-      color: '#E05508',
-    },
-    left: {
-      style: 'thin',
-      color: '#E05508',
-    },
-    diagonal: {
-      style: 'thin',
-      color: '#E05508',
-    }
-  },
+  ...borderProps,
 });
-
 
 const execute = () => {
   const headers = getHeaders();
