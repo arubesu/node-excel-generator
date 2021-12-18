@@ -111,10 +111,4 @@ const setData = (data) => {
   }
 };
 
-const getStyle = () => {
-  let style = worksheet.Style();
-
-  return style;
-}
-
 module.exports = execute;
